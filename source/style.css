@@ -1,7 +1,7 @@
 body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/440/original/aaron-burden-nJ2YCCnVp6k-unsplash.jpg?1679691984);
   background-size: cover;
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   align-content: center;
   margin: 0 auto;
   margin-top: 70px;
