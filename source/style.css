@@ -1,0 +1,73 @@
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/440/original/aaron-burden-nJ2YCCnVp6k-unsplash.jpg?1679691984);
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.8);
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.container {
+  display: block;
+  background: rgb(255, 255, 255, 0.8);
+  text-align: center;
+  color: rgb(32, 122, 182);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.384);
+}
+
+.card-body {
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+.form-control {
+  width: 50%;
+}
+.city-icon {
+  float: right;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  right: 150px;
+}
+.city-label {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.btn {
+  color: rgb(32, 122, 182);
+  margin-left: 30px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+svg {
+  width: 40%;
+}
+.units {
+  font-size: 20px;
+  display: inline;
+  position: relative;
+  top: -10px;
+}
