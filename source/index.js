@@ -76,7 +76,7 @@ function findMe(event) {
     navigator.geolocation.getCurrentPosition(logCurrentPosition);
   }
   let previousPosition = document.querySelector("#search-label");
-  previousPosition.innerHTML = "Previous search:";
+  previousPosition.innerHTML = "Search:";
 }
 
 function logCurrentPosition(position) {

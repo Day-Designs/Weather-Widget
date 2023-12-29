@@ -68,3 +68,7 @@ li {
   font-size: 15px;
   vertical-align: text-top;
 }
+.footer {
+  color: rgb(238, 234, 234);
+  background: rgba(128, 128, 128, 0.71);
+}
