@@ -24,7 +24,6 @@ let heading = document.querySelector("#selected-city-time");
 heading.innerHTML = formatDate(now);
 
 function changeFahrenheit(event) {
-  event.preventDefault();
   let temperatureElement = document.querySelector("#tempeture-converter");
   let temperature = temperatureElement.innerHTML;
   temperature = Number(temperature);
@@ -35,7 +34,6 @@ let fahrenheit = document.querySelector("#fer");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
 function changeCelsius(event) {
-  event.preventDefault();
   let temperatureElement = document.querySelector("#tempeture-converter");
   let temperature = temperatureElement.innerHTML;
   temperature = Number(temperature);
@@ -45,16 +43,9 @@ function changeCelsius(event) {
 let celsius = document.querySelector("#cel");
 celsius.addEventListener("click", changeCelsius);
 
-let cityInput = document.querySelector("#city-input");
-let currentCity = cityInput.value;
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=f09d3949047ab6c9e3bcaf79cf61f619&units=imperial`;
-
-let form = document.querySelector("#seach-engine");
-form.addEventListener("submit", showWeather);
-
-function showWeather(event) {
+function pullWeather(event) {
   event.preventDefault();
-  let currentCity = cityInput.value;
+  let currentCity = document.querySelector("#city-input").value;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=f09d3949047ab6c9e3bcaf79cf61f619&units=imperial`;
 
   axios.get(url).then(showCity);
@@ -63,15 +54,29 @@ function showWeather(event) {
 function showCity(response) {
   let cityDisplay = document.querySelector("#selected-city-display");
   cityDisplay.innerHTML = response.data.name;
+
   let tempCon = document.querySelector("#tempeture-converter");
   tempCon.innerHTML = Math.round(response.data.main.temp);
+
+  let weatherDescription = response.data.weather[0].description;
+
+  let currentDescription = document.querySelector("#description");
+  currentDescription.innerHTML = weatherDescription;
+
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = response.data.wind.speed;
+
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" class="weather-app-icon" />`;
 }
 
-let button = document.querySelector("#currentLocation");
-button.addEventListener("click", stepOne);
-
-function stepOne(event) {
-  navigator.geolocation.getCurrentPosition(logCurrentPosition);
+function findMe(event) {
+  event.preventDefault();
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(logCurrentPosition);
+  }
+  let previousPosition = document.querySelector("#search-label");
+  previousPosition.innerHTML = "Previous search:";
 }
 
 function logCurrentPosition(position) {
@@ -82,8 +87,27 @@ function logCurrentPosition(position) {
 }
 
 function showCurrentLocationWeather(response) {
-  let tempCon = document.querySelector("#tempeture-converter");
-  tempCon.innerHTML = Math.round(response.data.main.temp);
   let cityDisplay = document.querySelector("#selected-city-display");
   cityDisplay.innerHTML = response.data.name;
+
+  let tempCon = document.querySelector("#tempeture-converter");
+  tempCon.innerHTML = Math.round(response.data.main.temp);
+
+  let weatherDescription = response.data.weather[0].description;
+
+  let currentDescription = document.querySelector("#description");
+  currentDescription.innerHTML = weatherDescription;
+
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = response.data.wind.speed;
+
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" class="weather-app-icon" />`;
 }
+let cityInput = document.querySelector("#city-input");
+let currentCity = cityInput.value;
+let form = document.querySelector("#seach-engine");
+form.addEventListener("submit", pullWeather);
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=f09d3949047ab6c9e3bcaf79cf61f619&units=imperial`;
+let button = document.querySelector("#current-location");
+button.addEventListener("click", findMe);

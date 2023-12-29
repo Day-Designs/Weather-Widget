@@ -1,73 +1,70 @@
 body {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/440/original/aaron-burden-nJ2YCCnVp6k-unsplash.jpg?1679691984);
-  background-size: cover;
-  background-color: rgba(255, 255, 255, 0.8);
-  align-content: center;
+  color: rgb(32, 122, 182);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
   margin: 0 auto;
   margin-top: 70px;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/073/440/original/aaron-burden-nJ2YCCnVp6k-unsplash.jpg?1679691984);
+  background-size: cover;
 }
 
-.container {
-  display: block;
-  background: rgb(255, 255, 255, 0.8);
-  text-align: center;
+.weather-app-wrapper {
   color: rgb(32, 122, 182);
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: auto;
-  height: auto;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 500px;
+  margin: 50px auto;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.384);
+.weather-app {
+  padding: 50px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.603);
 }
 
-.card-body {
-  padding: 5px;
+.seach-engine-form {
+  padding: 0 70px 10px 70px;
+}
+
+.btn {
+  color: rgb(32, 122, 182);
+  font-size: small;
+  background-color: rgba(225, 225, 182, 0.708);
   border-radius: 10px;
-  margin: 5px;
 }
 
 h1 {
+  color: rgb(93, 123, 143);
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 28px;
+  margin: 10px;
+  padding-bottom: 10px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
   text-align: center;
+  margin: 0;
+  font-size: medium;
+  font-weight: 100;
+  line-height: 23px;
 }
-
-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.temp {
+  font-size: 40px;
+  margin: 15px 15px 3px 15px;
+  max-width: 600px;
+}
+.temperature {
+  font-size: 54px;
   align-content: center;
-}
-.form-control {
-  width: 50%;
-}
-.city-icon {
-  float: right;
-  width: 150px;
-  height: 150px;
-  position: relative;
-  right: 150px;
-}
-.city-label {
-  margin-right: 30px;
-  margin-left: 30px;
-}
-.btn {
-  color: rgb(32, 122, 182);
-  margin-left: 30px;
-  background-color: white;
-  border-radius: 50px;
-}
-
-svg {
-  width: 40%;
+  font-weight: 400;
+  padding: 5px;
 }
 .units {
-  font-size: 20px;
-  display: inline;
-  position: relative;
-  top: -10px;
+  font-size: 15px;
+  vertical-align: text-top;
 }
